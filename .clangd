@@ -1,0 +1,33 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add: 
+    - "-std=c++17"
+    - "-DESP32"
+    - "-DARDUINO=10812"
+    - "-DARDUINO_ESP32_DEV"
+    - "-DARDUINO_ARCH_ESP32"
+    - "-DCORE_DEBUG_LEVEL=0"
+    - "-DARDUINO_RUNNING_CORE=1"
+    - "-DARDUINO_EVENT_RUNNING_CORE=1"
+    - "--target=x86_64-linux-gnu"
+  Remove:
+    - "--target=xtensa-esp32-elf"
+    - "--driver-mode=g++"
+    - "-mlongcalls"
+    - "-fstrict-volatile-bitfields"
+    - "-fno-tree-switch-conversion"
+    - "-fno-jump-tables"
+    - "-resource-dir=/usr/lib/llvm-19/lib/clang/19"
+  
+Index:
+  Background: Build
+
+Diagnostics:
+  UnusedIncludes: Strict
+  MissingIncludes: Strict
+  ClangTidy:
+    Remove: 
+      - "modernize-*"
+      - "readability-*"
+      - "google-*"
+      - "cppcoreguidelines-*"

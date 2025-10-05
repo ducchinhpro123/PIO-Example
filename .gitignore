@@ -1,0 +1,15 @@
+# PlatformIO
+.pio/
+
+# Language Server
+compile_commands.json
+.clangd/
+.cache/
+
+
+*.swp
+*.swo
+*~
+
+*.tmp
+*.bak
